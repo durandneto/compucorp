@@ -1,0 +1,145 @@
+$shadowDark: rgba(0, 0, 0, 0.7);
+$shadowLight: rgba(255,255,255, 0.7);
+$fontDark:rgb(57,57,57);
+$header_top : '#header_top'; 
+
+@mixin font($size,$color,$hasShadow){
+  color: $color;
+  font-size: $size;
+  font-family: HelveticaNeue-Light,"Helvetica Neue",HelveticaNeue,helvetica,arial,sans-serif;
+  @if $hasShadow{
+    text-shadow: 1px 1px 2px $shadowDark;
+  }
+}
+
+@mixin header_float(){
+  z-index: 10;
+  clear: both;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+@mixin box($color){
+  background: $color;
+  max-height : 300px; 
+  overflow:scroll;
+  margin : 5px;
+  border: solid 1px $shadowLight;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes opacityMenuAnimation {
+    from {
+      top : -50;
+    }
+    to {
+      top : 0;
+    }
+}
+/* Standard syntax */
+@keyframes opacityMenuAnimation {
+    from {
+      top : -50;
+    }
+    to {
+      top : 0;
+    }
+}
+
+
+ 
+body{
+   
+  background-image: url(../assets/images/tower-bridge-london.jpg) ; 
+  background-size: cover;
+
+  height:100%;
+  width:100%;
+  
+
+  section.weather {
+
+        & article.column-2 {
+          @include box($shadowDark);
+          @include font(12px,#fff,false);
+        }
+
+        & article.column-1 {
+          @include box('none');
+        }
+
+        & aside.aside {
+          @include box(#fff);
+          @include font(12px,$fontDark,false);
+          padding: 0 10px;
+        }
+      & h3{
+        @include font(24px,#fff,true); 
+      }
+      & h3.temp_actual{
+        @include font(72px,#fff,true); 
+      }
+  }
+  header.weather {
+    & h2{
+      @include font(24px,#fff,true);
+    }
+    & h6{
+      @include font(12px,#fff,true);
+    }
+  }
+
+  #{$header_top}{
+    
+    background-color: $shadowDark; 
+
+    &.active{
+      @include header_float();
+      -webkit-animation-name: opacityMenuAnimation;  
+      -webkit-animation-duration: 0.5s;  
+      animation-name: opacityMenuAnimation;
+      animation-duration: 0.5s;
+    }
+
+    & .row{
+      margin : 0;
+      padding:  0 ;
+    }
+   
+    h1{
+      @include font(20px,#fff,true);
+      text-align: center;
+      display: block;
+      margin-top: 25px;
+    }
+    span{
+      @include font(12px,#fff,true);
+    }
+
+    .input_search{
+      @include font(14px,$fontDark,false);
+      padding: 10px;
+      margin: 15px 0;
+      width: 100%;
+
+    }
+
+    .button_search { 
+      @include font(12px,#fff,false);
+      border-radius: 5px;
+      border: none;
+      margin: 15px 0;
+      padding: 15px;
+      background-color: rgba(66,73,163,0.9);
+
+    }
+
+    #user_image, #facebook_image{
+      height: 50px;
+      margin: 15px;
+    }
+
+  }
+}
