@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Durand</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  </head>
+  <body>   
+    <header id="header_top" class="{{scrollActive}}" >
+  <div class="row">
+    <div class="col-xs-12 col-sm-2 col-md-2 hidden-xs">
+      <h1 class="title">Weather</h1>
+    </div>
+
+    <div class="col-xs-12 col-sm-10 col-md-10 " >
+
+      <div class="col-md-8 col-xs-8 col-sm-8">
+          <input placeholder="Enter city or zip code"  
+           class="input_search search-bar-input" input-search/>
+      </div>
+      <div class="col-md-4 col-xs-4 col-sm-4 pull-right">   
+          <input type="button" class="  button_search"  value="Search Weather" >
+      </div>
+    </div>
+
+  </div>  
+</header>
+    <div class="container-fluid" compucorp-view ></div>
+<!-- <link rel="stylesheet" href="./../../css/style.css"> -->
+<!-- <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <script src="js/compucorp.core.js" ></script> 
+
+    <script type="text/javascript">
+      var c = new CC_Weather();  
+
+      c.checkBrowserPosition();
+
+
+    </script>
+
+  </body>
+</html>

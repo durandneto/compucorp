@@ -163,7 +163,7 @@ exports.WeatherCityController = function($scope,$weather,$stateParams,$windCanva
 exports.searchBar = function() {
   return {
     controller: 'SearchBarController',
-    templateUrl: 'compucorp-app/templates/search_bar.html'
+    templateUrl: './templates/search_bar.html'
   };
 }; 
 exports.weatherCity = function() { 
@@ -172,7 +172,7 @@ exports.weatherCity = function() {
             city: "@city",
         },
     controller: 'WeatherCityController',
-    templateUrl: 'compucorp-app/templates/weather_city.html'
+    templateUrl: './templates/weather_city.html'
   };
 };  
 },{}],3:[function(require,module,exports){
@@ -230,11 +230,11 @@ app.config(function($httpProvider) {
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: "compucorp-app/templates/home.html",
+    templateUrl: "./templates/home.html",
   })
   .state('weather', {
     url: '/weather/{city}',
-    templateUrl: "compucorp-app/templates/home.html",
+    templateUrl: "./templates/home.html",
   });
 
   // if none of the above states are matched, use this as the fallback

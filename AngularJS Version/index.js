@@ -52,11 +52,11 @@ app.config(function($httpProvider) {
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: "compucorp-app/templates/home.html",
+    templateUrl: "./templates/home.html",
   })
   .state('weather', {
     url: '/weather/{city}',
-    templateUrl: "compucorp-app/templates/home.html",
+    templateUrl: "./templates/home.html",
   });
 
   // if none of the above states are matched, use this as the fallback
