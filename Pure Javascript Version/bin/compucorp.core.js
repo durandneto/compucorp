@@ -226,14 +226,23 @@ var CC_Weather = (function(){
     this.scope.template_url = './templates/template.html';
     this.cache_template = false;
     this.scope.ForeCast = new CC_ForeCast();
-    this.setInputSearch(this.getElementsByAttribute("input-search"));
 
-    
+    this.setInputSearch(this.getElementsByAttribute("compucorp-input-search"));
+    this.setButtonSearch(this.getElementsByAttribute("compucorp-button-search"));
 
   }
 
 
   CC_Weather.prototype = {
+    setButtonSearch : function(node){
+      var _self = this;
+      this.scope.buttonSearch = node;
+      console.log(node);
+      this.scope.buttonSearch.addEventListener('click',function(e){
+          // _self.getDefaultPlace(this.value); 
+          alert(_self.scope.inputSearch);
+      })
+    },
     setInputSearch : function(node){
       var _self = this;
       this.scope.inputSearch = node;
@@ -241,7 +250,7 @@ var CC_Weather = (function(){
         if (e.keyCode == 13) {
           _self.getDefaultPlace(this.value); 
         }
-      })
+      });
     },
     getScope : function(){
       return this.scope;

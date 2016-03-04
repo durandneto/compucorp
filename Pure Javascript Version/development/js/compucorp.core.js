@@ -225,7 +225,8 @@ var CC_Weather = (function(){
     this.scope.template_url = './templates/template.html';
     this.cache_template = false;
     this.scope.ForeCast = new CC_ForeCast();
-    this.setInputSearch(this.getElementsByAttribute("input-search"));
+    this.setInputSearch(this.getElementsByAttribute("compucorp-input-search"));
+    this.setButtonSearch(this.getElementsByAttribute("compucorp-button-search"));
 
     
 
@@ -233,6 +234,16 @@ var CC_Weather = (function(){
 
 
   CC_Weather.prototype = {
+    setButtonSearch : function(node){
+      var _self = this;
+      this.scope.buttonSearch = node;
+      console.log(node);
+      this.scope.buttonSearch.addEventListener('click',function(e){
+         
+          _self.getDefaultPlace(_self.scope.inputSearch.value); 
+      //     alert(_self.scope.inputSearch);
+      });
+    },
     setInputSearch : function(node){
       var _self = this;
       this.scope.inputSearch = node;
@@ -317,32 +328,33 @@ var CC_Weather = (function(){
       }
       var _self = this;
        this.request("GET",_self.scope.api_openweather+"q="+place+"&APPID="+_self.scope.openweather_key,function(responseText){
-        alert(responseText.message);
-        if(responseText.code != undefined && responseText.code === 200){
-          _self.scope.myPlace = JSON.parse(responseText);
-          _self.run();
-          _self.scope.ForeCast.getForeCast(_self.scope.myPlace.id);
-        }else{
-          alert(responseText.message);
-        }
+        
+          var myPlace = JSON.parse(responseText);
+          
+          if(myPlace .cod == 200){
+            _self.scope.myPlace = myPlace;
+            _self.run();
+            _self.scope.ForeCast.getForeCast(_self.scope.myPlace.id);
+          }
+        
        });
     } 
   }
 
-  // Expõe o construtor  
+  // Expõe o construtor
   return CC_Weather;
 
 }()); 
 
 
-var CC_ForeCast = (function(){  
+var CC_ForeCast = (function(){
   /**
    * contructor of the class and the super class
    * @return {void}
    */ 
 
     
-  function CC_ForeCast(){ 
+  function CC_ForeCast(){
     this.scope = {};
     this.scope.api_openweather = 'http://api.openweathermap.org/data/2.5/weather?';
     this.scope.api_openweather_nextday = 'http://api.openweathermap.org/data/2.5/forecast/daily?';
@@ -384,7 +396,6 @@ var CC_ForeCast = (function(){
 
 extend(CompucorpCore, CC_Weather);
 extend(CompucorpCore, CC_ForeCast); 
- 
 
 
 
