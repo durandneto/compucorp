@@ -8,5 +8,5 @@ at this moment, you test the AngularJS application accessing the <b>AngularJS Ve
 
 
 # Pure Javascript
-<p>at this moment, you test the Pure JAvascript application accessing the  Pure <b>Javascript Version/development</b> folder and double-click the <b>index.html</b> file.
+<p>at this moment, you test the Pure Javascript application accessing the  Pure <b>Javascript Version/development</b> folder and double-click the <b>index.html</b> file.
 </p>
