@@ -16,4 +16,5 @@ at this moment, you test the AngularJS application accessing the <b>AngularJS Ve
 <p>git clone https://github.com/durandneto/compucorp.git</p>
 <p>cd pure-javascript-version</p>
 <p>npm install</p>
-<p>gulp deploy:production</p>
+<p>cd production</p>
+<p>python -m SimpleHTTPServer</p>
