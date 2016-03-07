@@ -18,3 +18,4 @@ at this moment, you test the AngularJS application accessing the <b>AngularJS Ve
 <p>npm install</p>
 <p>cd production</p>
 <p>python -m SimpleHTTPServer</p>
+<p>Go to your borwser and access http://0.0.0.0:8000/</p>
