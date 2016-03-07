@@ -10,3 +10,10 @@ at this moment, you test the AngularJS application accessing the <b>AngularJS Ve
 # Pure Javascript
 <p>at this moment, you test the Pure Javascript application accessing the  Pure <b>Javascript Version/development</b> folder and double-click the <b>index.html</b> file.
 </p>
+
+# Running in Production mode
+
+<p>git clone https://github.com/durandneto/compucorp.git</p>
+<p>cd pure-javascript-version</p>
+<p>npm install</p>
+<p>gulp deploy:production</p>
