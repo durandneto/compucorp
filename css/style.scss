@@ -52,7 +52,7 @@ $header_top : '#header_top';
  
 body{
    
-  background-image: url(../assets/images/tower-bridge-london.jpg) ; 
+  background-image: url(http://trv-checkin.s3-eu-central-1.amazonaws.com/wp-content/uploads/sites/12/2014/12/londres.jpg) ;  
   background-size: cover;
 
   height:100%;
@@ -71,7 +71,7 @@ body{
         }
 
         & aside.aside {
-          @include box(#fff);
+          @include box(rgba(255,255,255,0.9));
           @include font(12px,$fontDark,false);
           padding: 0 10px;
         }

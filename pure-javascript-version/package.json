@@ -1,0 +1,29 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "description": "Project to avaliate",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 6000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/durandneto/compucorp.git"
+  },
+  "author": "Durand Neto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/durandneto/compucorp/issues"
+  },
+  "homepage": "https://github.com/durandneto/compucorp#readme",
+  "devDependencies": {
+    "bootstrap": "^3.3.6",
+    "gulp": "3.8.11",
+    "gulp-browserify": "0.5.1",
+    "gulp-copy2": "^0.2.0",
+    "gulp-file-copy": "0.0.1",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-minify": "0.0.5",
+    "gulp-rename": "^1.2.2"
+  }
+}
