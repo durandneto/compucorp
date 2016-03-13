@@ -5,7 +5,7 @@ var rename = require('gulp-rename');
  
 
 // gulp.task('watch', function() {
-//   gulp.watch(['./development/js/*.js'], ['browserify']);
+//   gulp.watch(['./development/js/*.js']);
 // });
 
 // gulp.task('compress', function() {
